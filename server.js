@@ -10,7 +10,7 @@ app
   .use(cors())
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
-//   .use('/', require('./src/routes'));
+  .use('/', require('./src/routes'));
 
 const connectDB = async () => {
     try {
