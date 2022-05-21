@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const books = require('../middleware/bookesValidation');
 
 const contControl = require('../controllers/books');
 
-router.get('/', saveBooks, contControl.getAll);
+router.get('/', contControl.getAll);
+router.get('/:one', contControl.getSingle);
 
-router.get('/:one',saveBooks, contControl.getSingle);
+
+module.exports = router;
