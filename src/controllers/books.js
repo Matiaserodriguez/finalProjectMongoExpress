@@ -1,5 +1,3 @@
-const mongodb = require('../db/db.config');
-const mongoose = require('mongoose');
 const db = require('../models');
 const books = db.books;
 
@@ -11,9 +9,7 @@ const getAll = async (req, res, next) => {
     console.log(e);
     res.status(400).json({msg:'Something went wrong try again'});
   }
-  
-}
-  
+};
 
 const getSingle = async (req, res, next) => {
 
