@@ -1,0 +1,37 @@
+{
+    "book1":
+    {
+        "Title": "Oral Communication for Non-Native Speakers of English",
+        "Author": "Timothy Kochem, Monica Ghosh, Lily Compton, Elena Cotos",
+        "Publisher": "Iowa State University Digital Press",
+        "Editor": "IASTATE.PRESSBOOKS.PUB",
+        "Language": "English",
+        "Date": " 05-18-2021",
+        "subject": "Communication studies, Language learning: speaking skills",
+        "summary": "This textbook includes materials on listening, speaking, lexicogrammar, pragmatics, and pronunciation"
+    },
+
+    "book2":
+    {
+        "Title": "Let's Chat! Spanish",
+        "Author": " Amber Hoye, Kelly Arispe, Abby Cain, Alejandra Garcia",
+        "Publisher": "Boise State University",
+        "Editor": "Amber Hoye, Kelly Arispe",
+        "Language": "English",
+        "Date": "04-05-2019",
+        "subject": "Language teaching and learning",
+        "summary": "Let’s Chat! Spanish features a collection of over 100 classroom-ready interpersonal speaking activities for novice and intermediate learners."
+    },
+
+    "book3":
+    {
+        "Title": "Green Tea Intermediate English Communication OER",
+        "Author": "Eric Dodson, Luciana Diniz, Nanci Leiton",
+        "Publisher": "OPEN OREGON EDUCATIONAL RESOURCES",
+        "Editor": "OPENOREGON.PRESSBOOKS.PUB ",
+        "Language": "English",
+        "Date": "03-14-2000",
+        "subject": "Language learning: listening skills, Language learning: speaking skills",
+        "summary": "This set of multimedia materials incorporates interesting topics and real-world language in an accessible way for adult English language learners at the low-to-mid intermediate level."
+    }
+}

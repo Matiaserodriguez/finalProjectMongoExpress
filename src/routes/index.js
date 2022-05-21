@@ -1,17 +1,19 @@
 const routes = require('express').Router();
-
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../../swagger-output.json');
 
 const oauth = require('./oauth');
-const token = require('./token')
-const user = require('./users')
-const accessToken = require('../middleware/accessToken')
-const authorize = require('../middleware/authorize')
+const token = require('./token');
+const user = require('./users');
+const books = require('./books');
+const accessToken = require('../middleware/accessToken');
+const authorize = require('../middleware/authorize');
+
 
 routes.use('/users', authorize.isAuthorized, user);
 routes.use('/login/oauth/authorize', oauth);
-routes.use('/api/session', accessToken.getAccessToken, token)
+routes.use('/api/session', accessToken.getAccessToken, token);
+routes.use('/books', books);
 
 // Swagger routes
 routes.use('/api-docs', swaggerUi.serve);
