@@ -1,4 +1,4 @@
-const validate = require('../helpers/validate');
+const movvieValidation = require('../helpers/validate');
 
 const savePromotion = (req, res, next) => {
   const validationRule = {
@@ -9,7 +9,7 @@ const savePromotion = (req, res, next) => {
     promo_start: 'required|date',
     promo_end: 'required|date',
   };
-  validate(req.body, validationRule, {}, (err, status) => {
+  movvieValidation(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
         success: false,

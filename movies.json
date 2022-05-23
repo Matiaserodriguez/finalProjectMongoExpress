@@ -1,0 +1,29 @@
+[
+  {
+    "movieName": "The Batman",
+    "director": "Matt Reeves",
+    "releaseYear": 2022,
+    "category": "Action ",
+    "cast": "Robert Pattinson, Zöe Kravitz, Jeffrey Wright",
+    "length": "176 min",
+    "summary": "When the Riddler, a sadistic serial killer, begins murdering jey political figures in Gotham. Batman is forced  to investigate the city's hidden corruption and question his family's involvement"
+  },
+  {
+    "movieName": "Doctor Strange",
+    "director": "Scott Derrickson",
+    "releaseYear": 2016,
+    "category": "Action",
+    "cast": "Benedict Cumderbatch, Rachel McAdams",
+    "length": "115 min",
+    "summary": "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts."
+  },
+  {
+    "movieName": "Fantastic Beasts and where to find them",
+    "director": "David Yates",
+    "releaseYear": 2016,
+    "category": "Adventure",
+    "cast": "Eddie Redmayne, Katherine Waterson",
+    "length": "133 min",
+    "summary": "The adventures of writer Newr Scamander in New York's secret community of witchs and wizards seventy years before Harry Potter reads his book in school."
+  }
+]
