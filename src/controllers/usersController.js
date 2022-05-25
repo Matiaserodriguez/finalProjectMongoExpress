@@ -20,14 +20,22 @@ exports.putUser = async(req, res) => {
     const body = req.body
 
         try{
-            let userToUpdate = await User.updateOne({ email: req.email }, body);
+            const fieldsToUpdate = {
+                firstName: body.firstName,
+                lastName: body.lastName,
+                email: body.email,
+                picture: body.picture,
+                locale: body.locale,
+            }   
+
+            let userToUpdate = await User.updateOne({ email: req.email }, fieldsToUpdate);
 
             if (userToUpdate.modifiedCount === 0){
                 res.status(400).json({status: 400, msg: 'Verify you are modifying something'});
                 return
             }
 
-            const user = await User.findOne({email: req.email});
+            const user = await User.findOne({email: req.email}, {createdAt: 0, updatedAt: 0});
 
             res.status(200).json(user);
             return
