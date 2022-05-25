@@ -1,9 +1,10 @@
 const routes = require('express').Router();
 const users = require('../controllers/usersController');
+const { saveUser } = require('../middleware/userValidation')
 
 
-routes.get('/', users.getUserInfo);
-routes.put('/', users.putUser);
+routes.get('/', saveUser, users.getUserInfo);
+routes.put('/', saveUser, users.putUser);
 
 
 module.exports = routes;
