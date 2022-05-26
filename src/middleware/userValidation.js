@@ -1,13 +1,12 @@
 const validate = require('../helpers/validate');
 
-const savePromotion = (req, res, next) => {
+const saveUser = (req, res, next) => {
   const validationRule = {
-    promo_percentage: 'required|integer',
-    promo_name: 'required|string',
-    promo_description: 'required|string',
-    promo_url: 'required|string',
-    promo_start: 'required|date',
-    promo_end: 'required|date',
+    firstName: 'required|string',
+    lastName: 'required|string',
+    email: 'required|email',
+    picture: 'required|string',
+    locale: 'required|string',
   };
   validate(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -23,5 +22,5 @@ const savePromotion = (req, res, next) => {
 };
 
 module.exports = {
-  savePromotion
+  saveUser
 };

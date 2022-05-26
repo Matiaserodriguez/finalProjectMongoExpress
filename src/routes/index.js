@@ -6,6 +6,7 @@ const oauth = require('./oauth');
 const token = require('./token');
 const user = require('./users');
 const books = require('./books');
+const movies = require('./movies');
 const accessToken = require('../middleware/accessToken');
 const authorize = require('../middleware/authorize');
 
@@ -14,6 +15,7 @@ routes.use('/users', authorize.isAuthorized, user);
 routes.use('/login/oauth/authorize', oauth);
 routes.use('/api/session', accessToken.getAccessToken, token);
 routes.use('/books', authorize.isAuthorized, books);
+routes.use('/movies', authorize.isAuthorized, movies);
 
 // Swagger routes
 routes.use('/api-docs', swaggerUi.serve);
