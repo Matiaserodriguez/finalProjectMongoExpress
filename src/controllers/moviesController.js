@@ -11,17 +11,28 @@ const getAll = async (req, res, next) => {
   }
 };
 
-const getSingle = async (req, res, next) => {
-
+const findByName = async (req, res, next) => {
   try {
-    const result = await moviesController.findOne({id: req.params.id});
+    const result = await moviesController.find( { 'movieName' : { '$regex' : req.params.name, '$options' : 'i' } } );
     res.status(200).json(result);
   } catch(e){
     console.log(e);
     res.status(400).json({msg:'Something wnt wrong try again'});
   }
 }
+
+const findByRate = async (req, res, next) => {
+  try {
+    const result = await moviesController.findOne({'year': { '$regex' : req.params.year, '$options' : 'i' } } );
+    res.status(200).json(result);
+  } catch(e){
+    console.log(e);
+    res.status(400).json({msg:'Something wnt wrong try again'});
+  }
+}
+
 module.exports = {
   getAll,
-  getSingle,
+  findByName,
+  findByRate,
 }

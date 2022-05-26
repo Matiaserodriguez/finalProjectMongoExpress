@@ -11,7 +11,6 @@ module.exports = (mongoose) => {
         length: String,
         summary: String
       }
-
     )
   );
 

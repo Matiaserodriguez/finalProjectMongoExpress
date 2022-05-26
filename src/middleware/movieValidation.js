@@ -1,13 +1,14 @@
 const movieValidation = require('../helpers/validate');
 
-const savePromotion = (req, res, next) => {
+const saveMovie = (req, res, next) => {
   const validationRule = {
-    promo_percentage: 'required|integer',
-    promo_name: 'required|string',
-    promo_description: 'required|string',
-    promo_url: 'required|string',
-    promo_start: 'required|date',
-    promo_end: 'required|date',
+    movieName: 'required|string',
+    director: 'required|string',
+    releaseYear: 'required|date',
+    category: 'required|string',
+    cast: 'required|string',
+    length: 'required|string',
+    summary: 'required|string'
   };
   movieValidation(req.body, validationRule, {}, (err, status) => {
     if (!status) {
