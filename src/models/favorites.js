@@ -5,10 +5,12 @@ module.exports = (mongoose) => {
       {
         userEmail: String,
         type: String,
-        media: [Array],
+        media: Object,
         mediaId: String
+      },
+      { 
+        versionKey: false 
       }
-
     )
   );
 

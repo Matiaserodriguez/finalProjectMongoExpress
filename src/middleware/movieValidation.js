@@ -24,5 +24,5 @@ const saveMovie = (req, res, next) => {
 };
 
 module.exports = {
-  savePromotion
+  saveMovie
 };
