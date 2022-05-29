@@ -11,8 +11,10 @@ module.exports = (mongoose) => {
         Date: String,
         subject: String,
         summary: String
+      },
+      { 
+        versionKey: false 
       }
-
     )
   );
 

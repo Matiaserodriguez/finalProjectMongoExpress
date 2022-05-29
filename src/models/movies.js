@@ -10,6 +10,9 @@ module.exports = (mongoose) => {
         cast: String,
         length: String,
         summary: String
+      },
+      { 
+        versionKey: false 
       }
     )
   );
