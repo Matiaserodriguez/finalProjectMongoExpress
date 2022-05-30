@@ -22,11 +22,8 @@ const getFromId = async (req, res) => {
   }
 };
 
-const postFavorite = async (req, res) => {
+const postFavorite = async (req, res, next) => {
   try {
-    const type = req.body.type
-    const object = req.object
-
     const mediaInDB = await favorites.find( { 'mediaId': req.body.mediaId, 'userEmail': req.email });
 
     if (mediaInDB && mediaInDB.length > 0) {
@@ -36,8 +33,8 @@ const postFavorite = async (req, res) => {
 
     const newFavorite = {
       userEmail: req.email,
-      type: type,
-      media: object,
+      type: req.body.type,
+      media: req.object,
       mediaId: req.body.mediaId
     }
 
@@ -51,9 +48,25 @@ const postFavorite = async (req, res) => {
   }
 };
 
-const putFavorite = async (req, res) => {
+const putFavorite = async (req, res, next) => {
   try {
-  //here is where we should code
+    const mediaInDB = await favorites.find( { 'mediaId': req.body.mediaId, 'userEmail': req.email });
+
+    if (mediaInDB && mediaInDB.length > 0) {
+      res.status(200).json(mediaInDB);
+      return;
+    }
+
+    const newFavorite = {
+      userEmail: req.email,
+      type: req.body.type,
+      media: req.object,
+      mediaId: req.body.mediaId
+    }
+
+    const result = await newPost.save(favorite);
+
+    res.status(200).json(result);
 
     res.status(200).json(result);
   } catch(e){
