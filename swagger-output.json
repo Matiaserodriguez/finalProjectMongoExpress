@@ -133,6 +133,58 @@
         }
       }
     },
+    "/books/{Title}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "one",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/books/{Author}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "one",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/movies/": {
       "get": {
         "description": "",
