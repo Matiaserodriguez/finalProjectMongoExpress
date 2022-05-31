@@ -19,8 +19,11 @@
     }
   },
   "paths": {
-    "/users/": {
+    "/users/":{
       "get": {
+        "tags": [
+					"Users"
+				],
         "description": "",
         "parameters": [
           {
@@ -35,10 +38,16 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       },
       "put": {
+        "tags": [
+					"Users"
+				],
         "description": "",
         "parameters": [
           {
@@ -52,7 +61,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fisrtName": {
+                "firstName": {
                   "example": "any"
                 },
                 "lastName": {
@@ -66,12 +75,6 @@
                 },
                 "locale": {
                   "example": "any"
-                },
-                "createdAt": {
-                  "example": "any"
-                },
-                "updatedAt": {
-                  "example": "any"
                 }
               }
             }
@@ -83,12 +86,18 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       }
     },
     "/books/": {
       "get": {
+        "tags": [
+					"Books"
+				],
         "description": "",
         "parameters": [
           {
@@ -107,12 +116,15 @@
         }
       }
     },
-    "/books/{id}": {
+    "/books/getId/{_id}": {
       "get": {
+        "tags": [
+					"Books"
+				],
         "description": "",
         "parameters": [
           {
-            "name": "one",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -133,12 +145,15 @@
         }
       }
     },
-    "/books/{Title}": {
+    "/books/author/{Author}": {
       "get": {
+        "tags": [
+					"Books"
+				],
         "description": "",
         "parameters": [
           {
-            "name": "one",
+            "name": "Author",
             "in": "path",
             "required": true,
             "type": "string"
@@ -159,12 +174,15 @@
         }
       }
     },
-    "/books/{Author}": {
+    "/books/title/{title}": {
       "get": {
+        "tags": [
+					"Books"
+				],
         "description": "",
         "parameters": [
           {
-            "name": "one",
+            "name": "title",
             "in": "path",
             "required": true,
             "type": "string"
@@ -187,6 +205,9 @@
     },
     "/movies/": {
       "get": {
+        "tags": [
+					"Movies"
+				],
         "description": "",
         "parameters": [
           {
@@ -205,8 +226,191 @@
         }
       }
     },
-    "/movies/{id}": {
+    "/movies/movieName/{name}": {
       "get": {
+        "tags": [
+					"Movies"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/movies/releasedYear/{year}": {
+      "get": {
+        "tags": [
+					"Movies"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/favorites/": {
+      "get": {
+        "tags": [
+					"Favorites"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+					"Favorites"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "example": "any"
+                },
+                "mediaId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+					"Favorites"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mediaId": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/favorites/{id}": {
+      "get": {
+        "tags": [
+					"Favorites"
+				],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+					"Favorites"
+				],
         "description": "",
         "parameters": [
           {
